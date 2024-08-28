@@ -1,0 +1,86 @@
+*, ::after, ::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+   
+}
+
+.container {
+    width: 500px;
+    height: 500px;
+   
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.img-holder {
+    width: 300px;
+    height: 300px;
+    border: 2px solid green;
+    position: relative;
+}
+
+.img {
+    width: 100%;
+    height: 100%;
+    transition: transform 2s;
+    border: 2px solid green;
+}
+
+.ticket {
+    width: 90px;
+    height: 120px;
+    
+    border: 2px solid green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: green;
+    color: white;
+    border-radius: 25px;
+    position: absolute;
+    bottom: 150px; /* Start hidden inside the box */
+    left: calc(50% - 45px); /* Center the ticket */
+    opacity: 0;
+    transition: bottom 1s ease, opacity 1s ease;
+}
+
+.ticket.show {
+    bottom: 320px; /* Ticket will pop straight up above the box */
+    opacity: 1;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#draw-button {
+    width: 130px;
+    height: 40px;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#draw-button:hover{
+    background-color: black;
+    color: white;
+}
